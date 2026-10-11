@@ -59,3 +59,30 @@ The Environment Monitor consists of an STM32G431KBT6, BNO086, and BME280. On boo
 | 6 | ESC6 | `u8` | 0–255 |
 | 7 | ESC7 | `u8` | 0–255 |
 | 8 | ESC8 | `u8` | 0–255 |
+
+## Display Controller Firmware
+
+The Display Controller runs on an STM32G431 and drives an e-paper display. It shows vehicle telemetry including battery voltages, attitude and movement, heading, thruster outputs, environmental readings, kill-switch state, and device presence. Test mode simulates telemetry and can be toggled with the board button. The firmware currently configures its I2C slave address as `0x4D`.
+
+### I2C Packet
+
+The controller receives a 31-byte telemetry frame. Multi-byte values are little-endian.
+
+| Byte | Field | Type | Encoding |
+|---|:---:|---|---|
+| 0 | magic | `u8` | `0xA5` frame marker |
+| 1 | version | `u8` | Protocol version `2` |
+| 2–7 | battery voltages | 3 × `u16 LE` | Millivolts, one value per battery |
+| 8 | flags | `u8` | Bit 0: kill switch on |
+| 9 | pitch | `i8` | Degrees |
+| 10 | roll | `i8` | Degrees |
+| 11 | yaw | `i8` | Degrees |
+| 12 | surge | `i8` | m/s² |
+| 13 | sway | `i8` | m/s² |
+| 14 | heave | `i8` | m/s² |
+| 15–16 | compass heading | `u16 LE` | Degrees |
+| 17–24 | thruster outputs | 8 × `u8` | One value per thruster |
+| 25–26 | temperature | `i16 LE` | Centi-degrees Celsius |
+| 27–28 | humidity | `u16 LE` | Centi-percent |
+| 29 | device presence | `u8` | Bit N indicates presence of device N |
+| 30 | CRC-8/ATM | `u8` | Checksum over bytes 0–29; polynomial `0x07`, initial value `0x00` |
