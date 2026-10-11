@@ -59,10 +59,9 @@ The Environment Monitor consists of an STM32G431KBT6, BNO086, and BME280. On boo
 | 6 | ESC6 | `u8` | 0–255 |
 | 7 | ESC7 | `u8` | 0–255 |
 | 8 | ESC8 | `u8` | 0–255 |
-
 ## Display Controller Firmware
 
-The Display Controller runs on an STM32G431 and drives an e-paper display. It shows vehicle telemetry including battery voltages, attitude and movement, heading, thruster outputs, environmental readings, kill-switch state, and device presence. Test mode simulates telemetry and can be toggled with the board button. The firmware currently configures its I2C slave address as `0x4D`.
+The Display Controller runs on an STM32G431 and drives an e-paper display. It shows vehicle telemetry including battery voltages, attitude and movement, heading, thruster outputs, environmental readings, kill-switch state, and device presence. Test mode simulates telemetry and can be toggled with the board button.
 
 ### I2C Packet
 
