@@ -6,13 +6,13 @@ namespace app {
 namespace {
 
 const DeviceConfig kDefaultDevices[kMaxDeviceCount] = {
-    {"PS", 0x68, false}, // Name, I2C address, initial presence state
-    {"IMU", 0x42, false},
-    {"ESC", 0x50, false},
+    {"PS", 0x4A, false}, // Name, I2C address, initial presence state
+    {"IMU", 0x4B, false},
+    {"ESC", 0x4C, false},
     {"DEPTH", 0x51, false},
-    {"HYDRO", 0x40, false},
-    {"TORP", 0x41, false},
-    {"ARM", 0x60, false},
+    {"HYDRO", 0x4E, false},
+    {"TORP", 0x4F, false},
+    {"ARM", 0x50, false},
     {"LED", 0x61, false},
 };
 
@@ -28,7 +28,7 @@ AppConfig MakeDefaultConfig() {
   config.displayStartupDelayMs = 3000U; // Milliseconds. Allows USB Serial to init
   config.fullRefreshIntervalMs = 300000U; // Milliseconds. Force a full refresh every 5 minutes
   config.refreshRateMs = 2000U; // Milliseconds. Partial refresh every 2 seconds after one finishes
-  config.i2cSlaveAddress = 0x2AU;  
+  config.i2cSlaveAddress = 0x4DU;
   config.batteryVoltageLowThreshold = 13.0f; // Volts. The battery voltage is considered low when below this value.
   config.batteryVoltageHighThreshold = 17.0f; // Volts. The battery voltage is considered high when above this value.
   config.connectedDeviceColor = DisplayColor::kBlack; // kBlack, kRed, kYellow, kWhite
