@@ -6,7 +6,7 @@ Firmware projects for the Kennesaw State University AUV team.
 
 | Project | Location | Description |
 |---|---|---|
-| Arm Controller Unit | [`ArmControllerUnit/ArmControllerUnit`](./ArmControllerUnit/ArmControllerUnit) | Arm Controller firmware |
+| Arm Controller Unit | [`ArmControllerUnit`](./ArmControllerUnit) | Arm Controller firmware |
 | ESC Controller | [`ESCController`](./ESCController) | ESC Controller firmware |
 | Environment Monitoring Unit | [`EnvironmentMonitoringUnit`](./EnvironmentMonitoringUnit) | Environment Monitoring Unit firmware |
 | Display Controller | [`DisplayController`](./DisplayController) | Display Controller firmware |
