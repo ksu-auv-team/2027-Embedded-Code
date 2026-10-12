@@ -11,7 +11,7 @@ Firmware projects for the Kennesaw State University AUV team.
 | Environment Monitoring Unit | [`EnvironmentMonitoringUnit`](./EnvironmentMonitoringUnit) | Environment Monitoring Unit firmware |
 | Display Controller | [`DisplayController`](./DisplayController) | Display Controller firmware |
 
-The controller projects use [PlatformIO](https://platformio.org/). Open the relevant project directory in VS Code with the PlatformIO extension, then build or upload using the PlatformIO toolbar. Each project has its own `platformio.ini`; this repository root is not a single PlatformIO project.
+The projects use [PlatformIO](https://platformio.org/). Open the relevant project directory in VS Code with the PlatformIO extension, then build or upload using the PlatformIO toolbar. Each project has its own `platformio.ini`; this repository root is not a single PlatformIO project.
 
 For Environment Monitoring Unit setup, hardware, and protocol details, see its [usage guide](./EnvironmentMonitoringUnit/README_USAGE.md) and [`docs/`](./EnvironmentMonitoringUnit/docs).
 
